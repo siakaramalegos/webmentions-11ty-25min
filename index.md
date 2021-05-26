@@ -83,6 +83,7 @@ Note: Show site with webmentions at bottom. Point out that this isn't a commenti
 
 <small>[webmention.io/](https://webmention.io/)</small>
 
+Note: Webmention.io is a hosted service that collects webmention data
 ---
 
 ## webmention.io
@@ -95,7 +96,7 @@ Collects webmentions and pingbacks on your behalf
 <link rel="pingback" href="https://webmention.io/yourdomain/abcdefg" />
 ```
 
-Note: pingbacks are a legacy XML-RPC protocol that existed before webmentions
+Note: When you sign up for it, you can put these links in the head of your html to collect webmentions. pingbacks are a legacy XML-RPC protocol that existed before webmentions
 
 ---
 
@@ -127,17 +128,21 @@ Form on my blog pages for people to manually send replies:
 </form>
 ```
 
+Note: (explain form). That's cool, but I'm active on Twitter, so I'd really like to bring in that interaction data as webmentions too...
+
 ---
 
 <img src="./images/bridgy.jpg" class="no-outline" alt="Screenshot of brid.gy website" width="70%">
 
 <small>[brid.gy/](https://brid.gy/)</small>
 
-Note: allows you to easily grab webmentions from these social media platforms as well - for example, Twitter likes, replies, and retweets.
+Note: Is a service that allows you to easily grab webmentions from these social media platforms as well - for example, Twitter likes, replies, and retweets.
 
 ---
 
 <img src="./images/bridgy-polling.jpg" class="no-outline" alt="Brid.gy table of responses with a column matching to any existing webmention targets" width="70%">
+
+Note: This is what it looks like when I log in with Twitter and look at my bridgy data.
 
 ---
 
@@ -160,6 +165,35 @@ Note: I didn't know about Netlify-cli when I wrote the post - that is a better o
 
 # Eleventy <!-- .element: class="dark-background" -->
 
+Note: Duotone possum... we're on the road to Eleventy now
+
+---
+
+## 🤘 Eleventy Rocks 🤘
+
+<div class="align-left">
+  <p class="fragment fade-in-then-semi-out"><span class="icons"><i class="fab fa-node-js"></i></span> Node-based static site generator</p>
+  <p class="fragment fade-in-then-semi-out"><span class="icons"><i class="fab fa-osi"></i></span> Non-corporate and open source</p>
+  <p class="fragment fade-in-then-semi-out"><span class="icons"><i class="fas fa-tachometer-alt"></i></span> Requires no client-side JS</p>
+  <p class="fragment fade-in-then-semi-out"><span class="icons"><i class="far fa-folder-open"></i></span> Folder/file-based API</p>
+  <p class="fragment fade-in-then-semi-out"><span class="icons"><i class="fas fa-ice-cream"></i></span> Can use markdown, Liquid, Nunjucks, Pug, Handlebars, etc. out of the box</p>
+
+</div>
+
+---
+
+# DEMO
+
+[sia.codes/posts/itsiest-bitsiest-eleventy-tutorial/](https://sia.codes/posts/itsiest-bitsiest-eleventy-tutorial/)
+
+---
+
+## Some fav features
+
+- Generating pages based on a data set, e.g. my [game pages](https://games.sia.codes/terraforming-mars/)
+- Creating layouts within layouts and template partials
+- Using filters and shortcodes for reusability
+
 ---
 
 <img src="./images/webmention_article.png" class="no-outline" alt="Screenshot of my Webmention + Eleventy tutorial" width="70%">
@@ -176,6 +210,30 @@ Note: This talk won't be an in-depth tutorial - we'll focus on the high-level ho
 - Store them in a cache file<!-- .element: class="fragment fade-in-then-semi-out" -->
 - Render the webmentions<!-- .element: class="fragment fade-in-then-semi-out" -->
 - Set up periodic builds<!-- .element: class="fragment fade-in-then-semi-out" -->
+
+---
+
+## Oh so serverless
+
+<img src="./images/devops1.png" alt="Sia dressed up as a champagne bottle at Mardi Gras" height="450px" class="no-outline">
+
+---
+
+## Oh so serverless
+
+<img src="./images/devops2.png" alt="Sia dressed up as a champagne bottle at Mardi Gras" height="450px" class="no-outline">
+
+---
+
+## Oh so serverless
+
+<img src="./images/devops3.png" alt="Sia dressed up as a champagne bottle at Mardi Gras" height="450px" class="no-outline">
+
+---
+
+## Oh so serverless
+
+<img src="./images/devops4.png" alt="Sia dressed up as a champagne bottle at Mardi Gras" height="450px" class="no-outline">
 
 ---
 
@@ -210,6 +268,26 @@ function writeToCache(data) {
     console.log(`>>> webmentions cached to ${CACHE_FILE_PATH}`)
   })
 }
+```
+
+---
+
+## Set up Netlify cache plugin
+
+Cache the `/_cache/` folder between builds<br>
+with [netlify-plugin-cache-folder](https://github.com/siakaramalegos/netlify-plugin-cache-folder)
+
+```
+npm install -D netlify-plugin-cache-folder
+```
+
+netlify.toml
+```toml
+[build]
+  command   = "npm run build"
+
+[[plugins]]
+  package = "netlify-plugin-cache-folder"
 ```
 
 ---
@@ -330,7 +408,7 @@ jobs:
 <!-- .slide: data-background="./images/akshar-dave-1GRvY9WUu08-unsplash.jpg" -->
 <h1 class="title" style="text-align:left;">Thanks!</h1>
 
-<p style="color:#333;text-align:left;">Slides:<br> <a href="http://bit.ly/web-images-2020" class="link-secondary">bit.ly/web-images-2020</a></p>
+<p style="color:#333;text-align:left;">Slides:<br> <a href="https://sia.codes/posts/webmentions-eleventy-talk/" class="link-secondary">sia.codes/posts/webmentions<br>-eleventy-talk/</a></p>
 <p style="color:#333;text-align:left;">Tutorial:<br> <a href="https://sia.codes/posts/webmentions-eleventy-in-depth/" class="link-secondary">sia.codes/posts/webmentions<br>-eleventy-in-depth/</a></p>
 <p style="color:#333;text-align:left;">Writing, resources, and more:<br> <a href="https://sia.codes/" class="link-secondary">sia.codes</a></p>
 
