@@ -6,7 +6,7 @@ In this talk, I discuss what webmentions are and how to implement them. The code
 
 ## Slides and Controls
 
-The slides are deployed at [projects.sia.codes/webmentions-eleventy-talk/](https://projects.sia.codes/webmentions-eleventy-talk/#/).
+The slides are deployed at https://projects.sia.codes/webmentions-11ty-25min/#/.
 
 To advance the slides, use `n` for next and `p` for previous. The right arrow jumps to the next section (and left for previous section). Up and down to advance through slides within a section.
 
